@@ -1,5 +1,6 @@
 import Stripe from 'stripe';
 
+
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_KEY as string);
 
 export default async function handler(req: any, res: any) {
@@ -26,3 +27,5 @@ export default async function handler(req: any, res: any) {
 
   res.json({ id: session.id });
 }
+
+

@@ -1,11 +1,11 @@
-"use client"
+
 
 import Link from "next/link";
 import { simplifiedProduct } from "../interface";
-import { client } from "../app/lib/sanity";
+import { client } from "../lib/sanity";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import Tranny from "./Tranny";
+
 
 async function getData() {
     const query = `*[_type == "product"][0...4] | order(_createdAt desc) {

@@ -1,3 +1,6 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 export default function PaymentSuccess({
     searchParams: { amount },
   }: {
@@ -12,6 +15,7 @@ export default function PaymentSuccess({
              ${amount}
           </div>
         </div>
+        <Link href="/Courses">Course</Link>
       </main>
     );
   }

@@ -1,20 +1,28 @@
-"use client";
 
-import CheckoutPage from "@/components/CheckOutPage";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import convertToSubcurrency from "@/app/lib/convertToSubcurrency";
 
-if (process.env.NEXT_PUBLIC_STRIPE_KEY === undefined) {
-  throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined");
-}
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
+// import CheckoutPage from "@/app/components/CheckOutPage";
+// import { Elements } from "@stripe/react-stripe-js";
+// import { loadStripe } from "@stripe/stripe-js";
+// import convertToSubcurrency from "@/app/lib/convertToSubcurrency";
+import Hero from "./components/Hero";
+import Newest from "@/app/components/Newest";
+import TrainingPay from "./components/TrainingPay";
+
+// if (process.env.NEXT_PUBLIC_STRIPE_KEY === undefined) {
+//   throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined");
+// }
+// const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
 
 export default function Home() {
-  const amount = 49.99;
+  //const amount = 49.99;
 
   return (
-    <main className="max-w-6xl mx-auto p-10 text-white text-center border m-10 rounded-md bg-gradient-to-tr from-blue-500 to-purple-500">
+    <div>
+            <Hero />
+              <Newest /> 
+             <TrainingPay />
+             
+    {/* <main className="max-w-6xl mx-auto p-10 text-white text-center border m-10 rounded-md bg-gradient-to-tr from-blue-500 to-purple-500">
       <div className="mb-10">
         <h1 className="text-4xl font-extrabold mb-2">Sonny</h1>
         <h2 className="text-2xl">
@@ -33,6 +41,7 @@ export default function Home() {
       >
         <CheckoutPage amount={amount} />
       </Elements>
-    </main>
+    </main> */}
+    </div>
   );
 }
